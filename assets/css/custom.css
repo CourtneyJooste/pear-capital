@@ -101,6 +101,27 @@
   text-align: center;
 }
 
+.pear-about {
+  padding-top: 100px;
+  background: #c4eaff;
+}
+
+.low-poly-separator {
+  content: url('../img/low-poly-separator.jpg');
+}
+
+.pear-data-padding {
+  padding: 150px 10px 0px 10px;
+}
+
+.low-poly-transition {
+  background: #c4eaff; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #c4eaff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #c4eaff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #c4eaff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #c4eaff); /* Standard syntax */
+}
+
 
 @media (max-width:991px) {
   .phone-img {
@@ -126,6 +147,10 @@
 
 
 @media (max-width:602px) { /* Our definition of really small */
+
+  .low-poly-separator {
+    content: url('../img/low-poly-transition.jpg');
+  }
 
   .pear-logo-main {
     max-height: 100px;
