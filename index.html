@@ -19,6 +19,13 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/material-kit.css" rel="stylesheet"/>
 		<link href="assets/css/custom.css" rel="stylesheet" />
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+	  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	  <script type="text/javascript">
+	     (function(){
+	        emailjs.init("user_Q13XoJI3Nu3MNMysBcq9h");
+	     })();
+	  </script>
 </head>
 
 <body>
@@ -222,40 +229,44 @@
 				<div class="col-md-6">
 					<div class="form-group label-floating has-success">
 						<label class="control-label">Email Address*</label>
-						<input type="text" value="" class="form-control" />
+						<input type="text" value="" class="form-control" id="email"/>
 						<!-- <span class="form-control-feedback">
 							<i class="material-icons">done</i>
 						</span> -->
 					</div>
 					<div class="form-group label-floating has-success">
 						<label class="control-label">Name*</label>
-						<input type="text" value="" class="form-control" />
+						<input type="text" value="" class="form-control" id="name"/>
 						<!-- <span class="form-control-feedback">
 							<i class="material-icons">done</i>
 						</span> -->
 					</div>
 					<div class="form-group label-floating has-success">
 						<label class="control-label">Cellphone</label>
-						<input type="text" value="" class="form-control" />
+						<input type="text" value="" class="form-control" id="cellphone"/>
 						<!-- <span class="form-control-feedback">
 							<i class="material-icons">done</i>
 						</span> -->
 					</div>
 					<div class="form-group label-floating has-success">
 						<label class="control-label">Message*</label>
-						<textarea class="form-control" rows="5"></textarea>
+						<textarea class="form-control" rows="5" id="message"></textarea>
 						<!-- <span class="form-control-feedback">
 							<i class="material-icons">done</i>
 						</span> -->
 					</div>
 				</div>
 				<div class="contact-submit">
-					<button class="btn btn-success">Submit<div class="ripple-container"></div></button>
+					<a onClick="sendMessage()"><button class="btn btn-success send-message">Submit<div class="ripple-container"></div></button></a>
 				</div>
 			</div>
 
 		</div>
 	</div>
+	<a  href="#top">
+	<button class="btn btn-info btn-just-icon" id="topBtn">
+		<i class="material-icons">arrow_upward</i>
+	</button></a>
 	</div>
 </div>
 <footer class="footer footer-transparent" style="background-color: white;">
@@ -337,10 +348,70 @@
         </div>
     </div>
 </footer>
-<a  href="#top">
-<button class="btn btn-info btn-just-icon" id="topBtn">
-	<i class="material-icons">arrow_upward</i>
-</button></a>
+
+<!-- Modal Core -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Message Sent!</h4>
+      </div>
+      <div class="modal-body">
+        Thanks for your message. We will get back to you as soon as possible!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info btn-simple" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Error</h4>
+      </div>
+      <div class="modal-body">
+        Please fill in all required fields.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="errorModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Error</h4>
+      </div>
+      <div class="modal-body">
+        An error occured, please try again later!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fullscreen-loading">
+	<div id="outPopUp">
+		<div class="sk-folding-cube">
+		  <div class="sk-cube1 sk-cube"></div>
+		  <div class="sk-cube2 sk-cube"></div>
+		  <div class="sk-cube4 sk-cube"></div>
+		  <div class="sk-cube3 sk-cube"></div>
+		</div>
+		<p>Sending your message</p>
+	</div>
+</div>
 
 	<!--   Core JS Files   -->
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
@@ -356,5 +427,45 @@
 	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 	<script src="assets/js/material-kit.js" type="text/javascript"></script>
 	<script src="assets/js/custom.js" type="text/javascript"></script>
+	<script>
+
+    function sendMessage() {
+          var email = document.getElementById("email").value;
+          var name = document.getElementById("name").value;
+          var cell = document.getElementById("cellphone").value;
+          var msg = document.getElementById("message").value;
+
+          if(name !== "" && email !== "" && msg !== ""){
+				    	$('.fullscreen-loading').fadeIn(100);
+							disableScroll();
+            // alert(name + "\n" +  email + "\n" + subj + "\n" + msg + "\n" + num);
+              emailjs.send("mailjet", "pear_capital", {"name":name,"email":email,"msg":msg,"cell":cell})
+              .then(function(response) {
+                //  alert("Message sent successfully!");
+                 document.getElementById("email").value = "";
+                 document.getElementById("cellphone").value = "";
+                 document.getElementById("name").value = "";
+                 document.getElementById("message").value = "";
+								 $('#successModal').modal('show');
+						 			$('.fullscreen-loading').fadeOut(100);
+									enableScroll();
+              }, function(err) {
+                 console.log(err);
+						 			$('.fullscreen-loading').fadeOut(100);
+			 						$('#errorModal2').modal('show');
+									enableScroll();
+              });
+          } else {
+						$('#errorModal').modal('show');
+						enableScroll();
+          }
+          // emailjs.send("mailjet", "true_survival", {"name":"fsa","email":"das","subject":"das","msg":"das","cell":"dsa"})
+          // .then(function(response) {
+          //    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+          // }, function(err) {
+          //    console.log("FAILED. error=", err);
+          // });
+    }
+    </script>
 
 </html>
