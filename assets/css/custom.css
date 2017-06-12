@@ -69,6 +69,7 @@
   color: white;
   font-size: 20px;
   padding-top: 15px;
+  padding-left: 10px;
   font-weight: 400;
 }
 
@@ -386,6 +387,14 @@
   }
 }
 /* END CUBE */
+
+.unselectable{
+	user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
 
 @media (max-width:991px) {
   .phone-img {

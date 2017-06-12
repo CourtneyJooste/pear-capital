@@ -28,7 +28,7 @@
 	  </script>
 </head>
 
-<body>
+<body class="unselectable">
 
 <!-- Navbar will come here -->
 <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll navbar-pear" role="navigation">
@@ -178,89 +178,90 @@
 	</div>
 
 	<div id="contact">
-		<h1>Contact Us</h1>
-		<h6>Send us a mail or schedule a meeting to find out more</h6><br />
-		<div class="container">
-			<div class="card card-signup">
-				<h4 style="text-align: center;">Send us a message.</h4>
-				<div class="col-md-6">
-					<div class="contact-info">
-						<div class="info info-horizontal">
-							<div class="icon icon-red">
-								<i class="material-icons">timeline</i>
-							</div>
-							<div class="description">
-								<h4 class="info-title">Marketing</h4>
-								<p class="description">
-									Contact us to schedule a meeting and we can help you determine the success of your project.
-								</p>
+		<div class="container-fluid">
+			<h1>Contact Us</h1>
+			<h6>Send us a mail or schedule a meeting to find out more</h6><br />
+			<div class="container">
+				<div class="card card-signup">
+					<h4 style="text-align: center;">Send us a message.</h4>
+					<div class="col-md-6">
+						<div class="contact-info">
+							<div class="info info-horizontal">
+								<div class="icon icon-red">
+									<i class="material-icons">timeline</i>
+								</div>
+								<div class="description">
+									<h4 class="info-title">Marketing</h4>
+									<p class="description">
+										Contact us to schedule a meeting and we can help you determine the success of your project.
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="contact-info">
-						<div class="info info-horizontal">
-							<div class="icon icon-green">
-								<i class="material-icons">chat_bubble_outline</i>
-							</div>
-							<div class="description">
-								<h4 class="info-title">Support</h4>
-								<p class="description">
-									For support or basic queries, we will get back to you within 24 hours during weekdays.
-								</p>
+						<div class="contact-info">
+							<div class="info info-horizontal">
+								<div class="icon icon-green">
+									<i class="material-icons">chat_bubble_outline</i>
+								</div>
+								<div class="description">
+									<h4 class="info-title">Support</h4>
+									<p class="description">
+										For support or basic queries, we will get back to you within 24 hours during weekdays.
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="contact-info">
-						<div class="info info-horizontal">
-							<div class="icon icon-blue">
-								<i class="material-icons">developer_mode</i>
-							</div>
-							<div class="description">
-								<h4 class="info-title">Technologies</h4>
-								<p class="description">
-									For a full list of technologies that we work with, please contact us and we can discuss.
-								</p>
+						<div class="contact-info">
+							<div class="info info-horizontal">
+								<div class="icon icon-blue">
+									<i class="material-icons">developer_mode</i>
+								</div>
+								<div class="description">
+									<h4 class="info-title">Technologies</h4>
+									<p class="description">
+										For a full list of technologies that we work with, please contact us and we can discuss.
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group label-floating has-success">
-						<label class="control-label">Email Address*</label>
-						<input type="text" value="" class="form-control" id="email"/>
-						<!-- <span class="form-control-feedback">
-							<i class="material-icons">done</i>
-						</span> -->
+					<div class="col-md-6">
+						<div class="form-group label-floating has-success">
+							<label class="control-label">Name*</label>
+							<input type="text" value="" class="form-control" id="name"/>
+							<!-- <span class="form-control-feedback">
+								<i class="material-icons">done</i>
+							</span> -->
+						</div>
+						<div class="form-group label-floating has-success">
+							<label class="control-label">Email Address*</label>
+							<input type="text" value="" class="form-control" id="email"/>
+							<!-- <span class="form-control-feedback">
+								<i class="material-icons">done</i>
+							</span> -->
+						</div>
+						<div class="form-group label-floating has-success">
+							<label class="control-label">Cellphone</label>
+							<input type="text" value="" class="form-control" id="cellphone"/>
+							<!-- <span class="form-control-feedback">
+								<i class="material-icons">done</i>
+							</span> -->
+						</div>
+						<div class="form-group label-floating has-success">
+							<label class="control-label">Message*</label>
+							<textarea class="form-control" rows="5" id="message"></textarea>
+							<!-- <span class="form-control-feedback">
+								<i class="material-icons">done</i>
+							</span> -->
+						</div>
 					</div>
-					<div class="form-group label-floating has-success">
-						<label class="control-label">Name*</label>
-						<input type="text" value="" class="form-control" id="name"/>
-						<!-- <span class="form-control-feedback">
-							<i class="material-icons">done</i>
-						</span> -->
+					<div class="contact-submit">
+						<a onClick="sendMessage()"><button class="btn btn-success send-message">Submit<div class="ripple-container"></div></button></a>
 					</div>
-					<div class="form-group label-floating has-success">
-						<label class="control-label">Cellphone</label>
-						<input type="text" value="" class="form-control" id="cellphone"/>
-						<!-- <span class="form-control-feedback">
-							<i class="material-icons">done</i>
-						</span> -->
-					</div>
-					<div class="form-group label-floating has-success">
-						<label class="control-label">Message*</label>
-						<textarea class="form-control" rows="5" id="message"></textarea>
-						<!-- <span class="form-control-feedback">
-							<i class="material-icons">done</i>
-						</span> -->
-					</div>
-				</div>
-				<div class="contact-submit">
-					<a onClick="sendMessage()"><button class="btn btn-success send-message">Submit<div class="ripple-container"></div></button></a>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<a  href="#top">
