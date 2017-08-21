@@ -1,9 +1,9 @@
 
 
-.pear-header {
+.pear-header-inner {
   padding-top: 15vh;
   min-height: 80vh;
-  background-color: #d7d7d7;
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .pear-header h1 {
@@ -33,17 +33,6 @@
   max-height: 150px;
 }
 
-.pear-header:after {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: block;
-    left: 0;
-    top: 0;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.18);
-}
 
 .image-responsive {
     max-width: 100%;
@@ -296,6 +285,14 @@
   text-align: center;
   font-weight: 400;
   font-size: 16px;
+}
+
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
 }
 
 /* CUUUUUUUUUUUUUUUUUUUUUUUUUBE */
