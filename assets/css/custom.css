@@ -300,6 +300,19 @@ h1, h2, h3, h4, h5, h6, p, span {
   height: 100%;
 }
 
+.owl-theme .owl-controls .owl-page {
+    display: inline-block;
+}
+.owl-theme .owl-controls .owl-page span {
+    background: none repeat scroll 0 0 #869791;
+    border-radius: 20px;
+    display: block;
+    height: 12px;
+    margin: 5px 7px;
+    opacity: 0.5;
+    width: 12px;
+}
+
 /* CUUUUUUUUUUUUUUUUUUUUUUUUUBE */
 .sk-folding-cube {
   margin: 20px auto;
