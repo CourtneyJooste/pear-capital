@@ -143,6 +143,14 @@ h1, h2, h3, h4, h5, h6, p, span {
   margin-bottom: -10px;
 }
 
+.scanplan-text h4{
+  color: #316493;
+}
+
+.scanplan-text.padding{
+  padding-top: 30%;
+}
+
 #contact {
   background: url('../img/low-poly-back.jpg');
   background-repeat: no-repeat;
@@ -411,9 +419,20 @@ h1, h2, h3, h4, h5, h6, p, span {
     -o-user-select: none;
 }
 
+.showOnMobile {
+  display: none;
+}
+
 @media (max-width:991px) {
   .phone-img {
     transform: translateY(-180px);
+  }
+  
+  .hideOnMobile{
+    display: none;
+  }
+  .showOnMobile {
+    display: block;
   }
 }
 

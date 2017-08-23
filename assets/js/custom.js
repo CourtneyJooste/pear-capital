@@ -85,7 +85,13 @@ function enableScroll() {
     document.onkeydown = null;
 }
 
-$('.owl-carousel').owlCarousel({
+$('.carousel-1').owlCarousel({
+    loop:true,
+    items: 1,
+    autoplay: true
+});
+
+$('.carousel-2').owlCarousel({
     loop:true,
     items: 1,
     autoplay: true
