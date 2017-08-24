@@ -94,5 +94,5 @@ $('.carousel-1').owlCarousel({
 $('.carousel-2').owlCarousel({
     loop:true,
     items: 1,
-    autoplay: true
+    autoplay: false
 });
