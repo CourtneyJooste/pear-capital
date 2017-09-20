@@ -300,6 +300,54 @@ h1, h2, h3, h4, h5, h6, p, span {
   font-size: 16px;
 }
 
+.contact-card-container {
+  /*background: white;*/
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.contact-card-inner {
+}
+
+.scanplan-card-left {
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.scanplan-card-text{
+  background-color: #241637;
+  color: white;
+  height: 570px;
+  padding: 50px 20px 50px 20px;
+  text-align: left;
+
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 0px;
+}
+
+.sp-logo {
+  width: 80%;
+  height: auto;
+  max-width: 400px;
+}
+
+.scanplan-card-text h2 {
+
+}
+
+.scanplan-card-text-inner {
+  padding-top: 50px;
+  text-align: left;
+
+}
+
+.scanplan-card-text-inner a{
+  color: white !important;
+}
 
 .overlay {
   position: absolute;
@@ -427,13 +475,36 @@ h1, h2, h3, h4, h5, h6, p, span {
   .phone-img {
     transform: translateY(-180px);
   }
-  
+
   .hideOnMobile{
     display: none;
   }
   .showOnMobile {
     display: block;
   }
+  .contact-card-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .sp-logo{
+    width: 50%;
+  }
+  .scanplan-card-left {
+      padding-top: 25px;
+      padding-bottom: 25px;
+  }
+  .scanplan-card-text {
+    height: auto;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+
+    padding: 25px 10px 25px 10px;
+  }
+  .scanplan-card-text-inner {
+    padding-top: 20px;
+  }
+
+
 }
 
 @media (max-width:772px) { /* Our definition of really small */
@@ -454,6 +525,9 @@ h1, h2, h3, h4, h5, h6, p, span {
 
 
 @media (max-width:602px) { /* Our definition of really small */
+  .scanplan-card-text h4 {
+    font-size: 1em;
+  }
 
   .low-poly-separator {
     content: url('../img/low-poly-transition.jpg');
