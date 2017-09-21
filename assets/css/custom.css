@@ -339,6 +339,23 @@ h1, h2, h3, h4, h5, h6, p, span {
 
 }
 
+.spc {
+
+    height: 570px;
+    background: url(../img/pepe.jpg);
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+}
+
+.spl {
+  padding-right: 0px;
+}
+
+.spr {
+  padding-left: 0px;
+}
+
 .scanplan-card-text-inner {
   padding-top: 50px;
   text-align: left;
@@ -504,8 +521,24 @@ h1, h2, h3, h4, h5, h6, p, span {
     padding-top: 20px;
   }
 
+  .spc {
+    height: 300px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .spl {
+    padding-right: 15px;
+  }
+
+  .spr {
+    padding-left: 15px;
+  }
+
 
 }
+
+
 
 @media (max-width:772px) { /* Our definition of really small */
 
