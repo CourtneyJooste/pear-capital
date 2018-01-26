@@ -533,7 +533,7 @@ platform, the first of its kind in South Africa. Have a look below for more deta
 				    	$('.fullscreen-loading').fadeIn(100);
 							disableScroll();
             // alert(name + "\n" +  email + "\n" + subj + "\n" + msg + "\n" + num);
-              emailjs.send("mailjet", "pear_capital", {"name":name,"email":email,"msg":msg,"cell":cell})
+              emailjs.send("mailgun", "pear_capital", {"name":name,"email":email,"msg":msg,"cell":cell})
               .then(function(response) {
                 //  alert("Message sent successfully!");
                  document.getElementById("email").value = "";
